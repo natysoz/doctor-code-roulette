@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>ג'אווה סקריפט המדריך המלא 2023 - תרגיל בית 43 משחק רולטה</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="game-container">
+            <div class="wheel">
+                <div id="lucky-number">0</div>
+                <div class="ball-container">
+                    <div class="ball">
+                        <div class="ball-highlight"></div>
+                    </div>
+                </div>
+                <img src="wheel.png" alt="wheel" />
+            </div>
+        </div>
+        <div class="actions-container">
+            <div class="number-title">Choose Number!</div>
+            <label>
+                <input
+                    id="user-number"
+                    type="number"
+                    class="number-title"
+                    placeholder="0"
+                />
+            </label>
+            <button onclick="spinRoulette()">Spin!</button>
+        </div>
+        <script src="index.js"></script>
+        <script>
+            const wheelWidth = document.querySelector('.wheel').clientWidth
+            document.querySelector('.ball-container').style.height = wheelWidth + 'px'
+            window.addEventListener('resize',()=>{
+                const wheelWidth = document.querySelector('.wheel').clientWidth
+                document.querySelector('.ball-container').style.height = wheelWidth + 'px'
+            })
+        </script>
+    </body>
+</html>
